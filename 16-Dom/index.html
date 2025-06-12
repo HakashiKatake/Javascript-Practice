@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .bg-black {
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM Learning <span style="display: none;">sdfd</span></h1>
+        <h2>ds</h2>
+        <h2>ds</h2>
+        <h2>ds</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque dolor aspernatur, quos dignissimos ullam consequuntur, distinctio quibusdam eius modi sunt consequatur exercitationem natus quo eveniet ad ipsam, pariatur cupiditate ab!</p>
+        <li>Item 1</li>
+        <li>Item 2</li>
+
+        <li class="list-item">Item 3</li>
+        <li class="list-item">Item 4</li>
+        <li class="list-item">Item 5</li>
+
+    </div>
+</body>
+<script>
+    document.querySelector('.bg-black').style.backgroundColor = 'black';
+    const title = document.getElementById('title');
+    title.style.backgroundColor = 'green'
+    title.style.borderRadius = "30px"
+    title.innerText = "DOM Manipulation"; // Change the text content of the title
+    title.textContent = "DOM Manipulation"; // Change the text content of the title also shows any hidden text
+    title.innerHTML = "DOM Manipulation <span style='color: red;'>Updated</span>"; // Change the HTML content of the title
+    document.querySelector('h1')
+
+    document.querySelector('#title')
+
+    document.querySelector('.heading')
+
+    const tempLiList = document.querySelectorAll('li');
+    // tempLiList.style.color = 'red'; // This will not work as tempLiList is a NodeList, not a single element
+    tempLiList[0].style.color = 'red'; // This will work for the first item
+    tempLiList.forEach(li => {
+        li.style.color = 'blue'; // Change color of all list items
+    });
+
+
+    const tempClasslist = document.getElementsByClassName('list-item')
+    Array.from(tempClasslist)
+        .forEach(li => {
+            li.style.color = 'green'; // Change color of all items with class 'list-item'
+        });
+
+    
+
+
+
+
+
+
+
+</script>
+</html>
